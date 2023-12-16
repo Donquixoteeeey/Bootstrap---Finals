@@ -51,19 +51,6 @@
       --p-font: 1.1rem;
     }
 
-    body {
-      background: var(--text-color);
-      color: var(--bg-color);
-    }
-    body.dark-mode {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-    }
-    body.dark-mode .about {
-      background-color: var(--text-color);
-      color: var(--bg-color);
-    }
-
     .navbar {
       position: fixed;
       width: 100%;
@@ -72,20 +59,13 @@
       align-items: center;
       z-index: 1000;
       display: flex;
-      background-color: rgba(
-        0,
-        0,
-        0,
-        0.2
-      ); /* Background with transparency (adjust the 0.7 for opacity) */
+      margin-bottom: 50px;
+      background-color: rgba(0, 0, 0, 0.2);
     }
     .navbar-brand {
       position: relative;
-      margin-left: 190px;
-      margin-right: 140px;
-    }
-    body.dark-mode .nav-link {
-      color: var(--text-color);
+      margin-left: 80px;
+      margin-right: 450px;
     }
     .nav-link {
       background-size: cover;
@@ -102,9 +82,9 @@
       text-align: center;
     }
     .nav-link:hover {
-      background: #b4dcf5;
+      background: #1f5cc5;
       transform: scale(1.1);
-      color: #232a30;
+      color: #f7f9fa;
       border-radius: 50px;
       box-shadow: 5px 5px 15px rgba(49, 80, 221, 0.2);
     }
@@ -132,27 +112,40 @@
       width: 100%;
     }
     .dropdown-menu a:hover {
-      transform: scale(1.1);
-      color: #115171;
+      transform: scale(1.2);
+      color: #f7f9fa;
       border-radius: 50px;
-      background: var(--second-color);
+      background: #1f5cc5;
     }
     section {
-      padding: 80px 18%;
+      padding: 150px 15%;
+    }
+    .card-margin {
+      margin: 60px;
+    }
+    .card {
+      flex: 1;
+      margin: 15px 15px;
+      border-radius: 30px;
+      overflow: hidden;
+    }
+    .card img {
+      border-radius: 25px 25px 25px 25px;
     }
   </style>
+
   <style>
     body {
       background: #6a11cb;
       background: -webkit-linear-gradient(
         to right,
         rgba(106, 17, 203, 1),
-        rgba(37, 117, 252, 1)
+        rgb(31, 92, 197)
       );
       background: linear-gradient(
         to right,
         rgba(106, 17, 203, 1),
-        rgba(37, 117, 252, 1)
+        rgb(31, 92, 197)
       );
     }
   </style>
@@ -162,8 +155,8 @@
 
     <nav class="navbar navbar-expand-lg" id="myNavbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <img src="img/CPC-Logo.png" alt="Logo" width="200" height="90" />
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo.png" alt="Logo" width="70" height="70" />
         </a>
 
         <button
