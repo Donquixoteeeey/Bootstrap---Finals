@@ -117,20 +117,81 @@
       border-radius: 50px;
       background: #1f5cc5;
     }
-    section {
-      padding: 150px 15%;
+
+    .carousel {
+      max-width: 1000px;
+      margin: auto;
+      overflow: hidden;
+      padding-top: 150px;
+      padding-bottom: 50px;
     }
-    .card-margin {
-      margin: 60px;
-    }
-    .card {
-      flex: 1;
-      margin: 15px 15px;
-      border-radius: 30px;
+
+    .carousel-item {
+      border-radius: 15px;
       overflow: hidden;
     }
+    .card-deck {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+    }
+
+    .card {
+      flex: 0 0 45%;
+      display: flex;
+      flex-direction: row-reverse;
+      margin-bottom: 20px;
+      margin-left: 50px;
+      overflow: hidden;
+      border-radius: 20px;
+      transition: max-height 0.3s ease-in-out;
+    }
+
+    #card2 {
+      margin-right: 50px; /* Add a left margin to the second card */
+    }
+    .card.expanded {
+      max-height: 1000px;
+    }
+
     .card img {
-      border-radius: 25px 25px 25px 25px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 20px 20px 20px 20px;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+    }
+
+    .card-text {
+      font-size: 1rem;
+      overflow: hidden;
+      max-height: 70px;
+      transition: max-height 0.3s ease-in-out;
+    }
+
+    .expanded-text {
+      max-height: none;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+
+    .btn-read-more {
+      cursor: pointer;
+      color: #ffffff;
+      background-color: #007bff;
+      border-radius: 20px;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn-read-more:hover {
+      background-color: #6a11cb;
     }
   </style>
 
@@ -178,9 +239,7 @@
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" href="news&updates.html"
-                >News & Updates</a
-              >
+              <a class="nav-link active" href="#news-updates">News & Updates</a>
             </li>
 
             <li class="nav-item">
@@ -208,5 +267,169 @@
         </div>
       </div>
     </nav>
+
+    <div id="carouselExampleFade" class="carousel slide carousel-fade">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/Chorale1.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="img/Chorale2.jpg" class="d-block w-100" alt="..." />
+        </div>
+        <div class="carousel-item">
+          <img src="img/cover3.jpg" class="d-block w-100" alt="..." />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleFade"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div id="news-updates" class="container mt-5 mb-5">
+      <h2 class="text-center text-white">News and Updates</h2>
+    </div>
+
+    <!--cards-->
+
+    <div class="card-deck">
+      <div class="card mt-5" id="card1">
+        <div class="container mt-3 mb-3">
+          <img
+            src="img/Chorale4.jpg"
+            class="card-img-top img-fluid"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title mt-3 mb-4">
+              CHRISTMAS EXTRAVAGANZA SA PURISIMA
+            </h5>
+            <p class="card-text">
+              <b>
+                The CPC Chorale cordially invites you to an extraordinary
+                musical event! Immerse yourself in the magic of the season at
+                our "Christmas Extravaganza Sa Purisima”, a CPC Diamond Jubilee
+                Finale Concert!
+              </b>
+            </p>
+            <p class="card-text expanded-text">
+              <!-- Additional text goes here -->
+              Date: December 15, 2023 (Friday) <br />
+              Time: 3:00 PM Venue: SLEC <br />
+              <br />
+              Auditorium, CPC Boulevard Campus This festive occasion is open to
+              everyone, and admission is FREE! Bring your family, friends, and
+              loved ones to share in this celebration of music, community, and
+              the jubilant Christmas season! ✨🎉 <br />
+              <br />
+              ‘𝑷𝒓𝒐 𝑫𝒆𝒐 𝑬𝒕 𝑷𝒂𝒕𝒓𝒊𝒂 𝒕𝒉𝒓𝒐𝒖𝒈𝒉 𝒕𝒉𝒆 𝒈𝒊𝒇𝒕 𝒐𝒇 𝒎𝒖𝒔𝒊𝒄.’ <br /><br />
+              #CPCChorale #CPCDiamondJubilee #ChristmasExtravaganza
+              #ProDeoEtPatria
+            </p>
+            <span class="btn btn-read-more" onclick="toggleCard('card1')"
+              >Read more</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more cards here if needed -->
+
+      <div class="card mt-5" id="card2">
+        <div class="container mt-3 mb-3">
+          <img
+            src="img/Chorale5.jpg"
+            class="card-img-top img-fluid"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title mt-3 mb-4">
+              A MAGICAL NIGHT AT THE DREAMLAND
+            </h5>
+            <b class="card-text mb-3">
+              What an incredible honor it was for the CPC Chorale to be part of
+              the breathtaking Opening of Lights at the Sapian Dreamland 2023!
+            </b>
+            <p class="card-text expanded-text mt-3">
+              A heartfelt thank you to the Sapian Municipal Government headed by
+              Hon. Mayor Jose O. Villanueva, for inviting us and giving us the
+              chance to share our music with the amazing Sapianons. We would
+              like also to thank Capiz Tourism and Cultural Affairs, led by Sir
+              Al Tesoro, under the exemplary leadership of Hon. Gov. Fredenil H.
+              Castro! Your support and commitment to promoting cultural richness
+              and tourism in Capiz have not gone unnoticed. <br /><br />
+              ‘𝑷𝒓𝒐 𝑫𝒆𝒐 𝑬𝒕 𝑷𝒂𝒕𝒓𝒊𝒂 𝒕𝒉𝒓𝒐𝒖𝒈𝒉 𝒕𝒉𝒆 𝒈𝒊𝒇𝒕 𝒐𝒇 𝒎𝒖𝒔𝒊𝒄.’ <br />
+              <br />
+              #CPCChorale #ChristmasIsInTheAir #ProDeoEtPatria
+            </p>
+            <span class="btn btn-read-more" onclick="toggleCard('card2')"
+              >Read more</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let prevScrollpos = window.pageYOffset;
+
+      window.onscroll = function () {
+        const currentScrollPos = window.pageYOffset;
+        const navbar = document.getElementById("myNavbar");
+
+        if (prevScrollpos > currentScrollPos) {
+          // Scroll up
+          navbar.style.height = "120px";
+          navbar.style.opacity = "1";
+        } else {
+          // Scroll down
+          navbar.style.height = "0";
+          navbar.style.opacity = "0";
+        }
+
+        prevScrollpos = currentScrollPos;
+      };
+    </script>
+    <script>
+      function toggleCard(cardId) {
+        const card = document.getElementById(cardId);
+        const cardText = card.querySelector(".card-text");
+        const expandedText = card.querySelector(".expanded-text");
+        const btnReadMore = card.querySelector(".btn-read-more");
+
+        if (card.classList.contains("expanded")) {
+          // Card is collapsed, expand it
+          card.classList.remove("expanded");
+          cardText.style.maxHeight = "none";
+          expandedText.style.maxHeight =
+            "1000px"; /* Set a value to show all content */
+          btnReadMore.innerText = "Read less ▲";
+        } else {
+          // Card is expanded, collapse it
+          card.classList.add("expanded");
+          cardText.style.maxHeight = "70px";
+          expandedText.style.maxHeight = "0";
+          btnReadMore.innerText = "Read more ▼";
+        }
+      }
+
+      // Call toggleCard to collapse the card initially
+      toggleCard("card1");
+      toggleCard("card2");
+    </script>
   </body>
 </html>
